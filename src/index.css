@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@layer components{
+    .bg-primary-color{
+        @apply bg-[#F2F5F9]
+    }
+    .bg-secondary-color{
+        @apply bg-[#FFB341]
+    }
+}
+
+.details {
+    scrollbar-width: thin;
+}
+.details::-webkit-scrollbar {
+    width: 6px;
+  }
+.containerlay{
+    scrollbar-width: thin;
+}
+.card{
+    scrollbar-width: thin;
+}
+.card::-webkit-scrollbar{
+    width: 2px;
+    background: #cecece00;
+}
+.card::-webkit-scrollbar-thumb{
+    background: #383b5f;
+    width: 5px;
+    height: 4px;
+}s
+.card::-webkit-scrollbar-corner{
+    border-radius: 5px;
+}
+.containerlay::-webkit-scrollbar {
+    width: 8px;
+}
+.download:hover{
+    width: 40%;
+    border-radius: 20px;
+}
+.download:hover i{
+    visibility: hidden;
+}
+.download p{
+    visibility: hidden;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+.download:hover p{
+    visibility: visible;
+}
+.containerlay h1::after {
+    content: "";
+    display: block; 
+    width: 150px;
+    height: 5px;
+    background-color: #FFB341;
+    animation: moveBeside 5s ease-in-out infinite;
+}
+@media (max-width: 800px) {
+    .containerlay h1::after{
+        width: 120px;
+        height: 3px;
+    }
+}
+@keyframes moveBeside {
+    0% { transform: translateX(-20px); } 
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(-20px); } 
+}

@@ -1,0 +1,110 @@
+
+  nav {
+    display: block;
+    background-color: #f6f9ff;
+    padding: 5px; /* Reduced padding */
+    border-radius: 8px; /* Reduced border-radius */
+    transform: scale(1.5); /* Reduced scale */
+    overflow: hidden;
+  }
+  
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: #53588b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px; /* Reduced font-size */
+    line-height: 1;
+    text-align: center;
+    display: inline-block;
+    width: 80px; /* Reduced width */
+    padding: 8px; /* Reduced padding */
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  
+  nav a b {
+    position: relative;
+    top: 30px; /* Adjusted top position */
+    transition: 0.3s ease top;
+  }
+  
+  nav a i {
+    position: relative;
+    left: 20%; /* Adjusted left position */
+    transition: 0.3s ease left;
+    font-size: 13px;
+  }
+  
+  nav span {
+    position: absolute;
+    width: 80px; /* Reduced width */
+    background-color: #e5eeff;
+    top: 5px; /* Reduced top position */
+    bottom: 5px; /* Reduced bottom position */
+    left: 5px; /* Reduced left position */
+    border-radius: 8px; /* Reduced border-radius */
+    z-index: 1;
+    transition: 0.3s ease left;
+  }
+  
+  /* nav a:hover b {
+    top: 0;
+  } */
+  nav a.active b,
+  nav a:hover b {
+    top: 0;
+  }
+  
+  nav a.active i,
+  nav a:hover i {
+    left: 0;
+  }
+  
+  
+  /* #ytd-url {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    margin: 20px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #53588b;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px -5px rgba(83, 88, 139, 0.3);
+    z-index: 125;
+  } */
+  @media screen and (max-width: 360px) {
+  nav {
+    padding: 3px; /* Further reduced padding */
+    border-radius: 6px; /* Further reduced border-radius */
+    transform: scale(1.2); /* Further reduced scale */
+  }
+
+  nav a {
+    width: 60px; /* Keep width consistent with span */
+    padding: 6px; /* Further reduced padding */
+    font-size: 9px; /* Adjusted font-size */
+  }
+
+  nav a b {
+    top: 20px; /* Consistent with the previous adjustment */
+  }
+
+  nav a i {
+    left: 15%; /* Consistent with the previous adjustment */
+    font-size: 11px; /* Consistent with the previous adjustment */
+  }
+
+  nav span {
+    width: 50px; /* Further reduced width */
+    top: 3px; /* Further reduced top position */
+    bottom: 3px; /* Further reduced bottom position */
+    left: 5px; /* Consistent with the previous adjustment */
+    border-radius: 6px; /* Consistent with the previous adjustment */
+  }
+}
