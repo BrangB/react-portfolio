@@ -118,7 +118,7 @@ const Resume = () => {
               variants={slideInAnimation}
               className='w-full md:w-[70%] xl:w-[45%] '>
             <div className="w-full">
-            <h2 className='text-lg lg:text-xl font-bold'>Education</h2>
+            <h2 className='text-lg lg:text-2xl font-bold'>Education</h2>
               <div className="card rounded-lg p-4 bg-[#F2F7FC] max-h-72 lg:max-h-52 overflow-y-auto mt-4">
                 <div className="flex items-center justify-start">
                   <i className="fa-solid fa-graduation-cap mr-2 text-[#3667a0]"></i>
@@ -148,7 +148,7 @@ const Resume = () => {
               variants={slideInAnimationleft}
               className='w-full md:w-[70%] xl:w-[45%] '>
             <div className="w-full">
-            <h2 className='text-lg lg:text-xl font-bold'>Experience</h2>
+            <h2 className='text-lg lg:text-2xl font-bold'>Experience</h2>
               <div className="card rounded-lg p-4 bg-[#F2F7FC] max-h-72 lg:max-h-52 overflow-y-auto mt-4">
                 <div className="flex items-center justify-start">
                   <i class="fa-solid fa-briefcase mr-2 text-[#3667a0]"></i>
