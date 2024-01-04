@@ -10,18 +10,18 @@ const handleLinkClick = (linkId) => {
 };
 
 const linkData = [
-  { id: 'home', text: 'Home', iconClass: 'fas fa-home' },
-  { id: 'resume', text: 'Resume', iconClass: 'fas fa-award' },
-  { id: 'work', text: 'Work', iconClass: 'fa-solid fa-briefcase' },
-  { id: 'contact', text: 'Contact', iconClass: 'fa-solid fa-address-book'}
+  { id: 'home', path: "/", text: 'Home', iconClass: 'fas fa-home' },
+  { id: 'resume', path: "/resume", text: 'Resume', iconClass: 'fas fa-award' },
+  { id: 'work', path: "/work", text: 'Work', iconClass: 'fa-solid fa-briefcase' },
+  { id: 'contact', path: "/contact", text: 'Contact', iconClass: 'fa-solid fa-address-book'}
 ];
 
 return (
-  <nav className='hidden md:block lg:absolute lg:-top-5'>
+  <nav className='hidden md:block lg:absolute lg:-top-5 z-50'>
     {linkData.map((link) => (
         
         <Link
-            to={`/${link.id}`}
+            to={`${link.path}`}
             key={link.id}
             id={link.id}
             className={activeLink === link.id ? 'active' : ''}

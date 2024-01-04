@@ -23,26 +23,35 @@
 .details::-webkit-scrollbar {
     width: 6px;
   }
-.containerlay{
-    scrollbar-width: thin;
-}
 .card{
     scrollbar-width: thin;
 }
 .card::-webkit-scrollbar{
-    width: 2px;
+    width: 0px;
     background: #cecece00;
 }
 .card::-webkit-scrollbar-thumb{
     background: #383b5f;
-    width: 5px;
+    width: 0px;
     height: 4px;
 }s
 .card::-webkit-scrollbar-corner{
     border-radius: 5px;
 }
-.containerlay::-webkit-scrollbar {
-    width: 8px;
+.display{
+    scrollbar-width: thin;
+}
+.display::-webkit-scrollbar{
+    width: 0px;
+    background: #cecece00;
+}
+.display::-webkit-scrollbar-thumb{
+    background: #383b5f00;
+    width: 0px;
+    height: 2px;
+}
+.display::-webkit-scrollbar-corner{
+    border-radius: 5px;
 }
 .download:hover{
     width: 40%;
@@ -70,10 +79,15 @@
     background-color: #FFB341;
     animation: moveBeside 5s ease-in-out infinite;
 }
+
 @media (max-width: 800px) {
     .containerlay h1::after{
         width: 120px;
         height: 3px;
+    }
+    .avatarImg {
+        /* Apply animation to the avatar image */
+        animation: bubblePop 4s infinite ease-in-out; /* Adjust timing as needed */
     }
 }
 @keyframes moveBeside {
@@ -81,3 +95,22 @@
     50% { transform: translateX(50px); }
     100% { transform: translateX(-20px); } 
 }
+@keyframes bubblePop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+    80% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

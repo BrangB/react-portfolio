@@ -10,7 +10,7 @@ function App() {
   const navigate = useNavigate()
 
   const navMenu = (paths) => {
-    navigate(`/${paths}`)
+    navigate(`${paths}`)
     setExpandMenu(false)
   }
 
@@ -21,15 +21,15 @@ function App() {
       <div className={`${expandMenu ? 'scale-100' : 'scale-0'} fixed top-0 right-0 bg-transparent w-full h-full z-50 duration-200 flex flex-col items-center justify-center`}>
         <p className='top-5 right-5 block lg:hidden fixed rounded-full duration-200 bg-transparent p-3 hover:bg-[#9797978f]'><AiOutlineClose className='text-2xl text-white' onClick={() => setExpandMenu(false)}/></p>
         <ul className='gap-6 text-xl text-center md:hidden flex flex-col uppercase'>
-              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer' onClick={() => navMenu("home")}>Home</li>
-              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("resume")}>Resume</li>
-              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("work")}>Work</li>
-              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("contact")}>Contact</li>
+              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer' onClick={() => navMenu("/")}>Home</li>
+              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("/resume")}>Resume</li>
+              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("/work")}>Work</li>
+              <li className='text-white hover:text-[#4067bd] duration-300 cursor-pointer'  onClick={() => navMenu("/contact")}>Contact</li>
         </ul>
       </div>
-      <div className="main bg-primary-color w-screen h-screen p-6 lg:p-8 flex flex-col lg:items-start items-center justify-center  overflow-y-scroll lg:overflow-hidden">
-        <div className="w-full flex justify-end"><LightAndDarkMode /></div>
-        <div className="mainpage w-full h-[98%] flex flex-col lg:flex-row p-4">
+      <div className="main bg-primary-color w-screen h-screen p-6 lg:p-8 flex flex-col lg:items-start items-center justify-end  overflow-y-scroll lg:overflow-hidden">
+        {/* <div className="w-full flex justify-end"><LightAndDarkMode /></div> */}
+        <div className="mainpage w-full h-[100%] lg:h-[98%] flex flex-col lg:flex-row p-0 lg:p-4">
           <Info/>
           <NavAndDisplay />
         </div> 
