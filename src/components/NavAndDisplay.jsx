@@ -10,7 +10,7 @@ const NavAndDisplay = () => {
   return (
     <div className="navAndDisplay w-[100%] lg:w-[70%] flex flex-col items-center justify-center relative">
         <TabBar />
-        <div className="display bg-white w-[100%] h-[600px] mb-12 lg:mb-0 md:h-[100%] overflow-y-auto rounded-xl p-6 md:p-9 lg:p-12">
+        <div className="display bg-white w-[100%] h-[700px] mb-12 lg:mb-0 md:h-[100%] overflow-y-auto rounded-xl p-6 md:p-9 lg:p-12">
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/resume' element={<Resume />} />
