@@ -52,7 +52,7 @@ const Contact = () => {
               variants={slideInAnimation}
               className='w-full'>
             <div className="w-full flex flex-col lg:flex-row justify-between">
-              <div className="card w-full lg:w-[45%] rounded-lg p-6 bg-[#F2F7FC] min-h-20 mt-4">
+              <div className="card w-full lg:w-[48%] rounded-lg p-6 bg-[#F2F7FC] min-h-14 mt-4">
                 <div className='flex '>
                   <div><i class="fa-solid fa-phone mr-3"></i></div>
                   <div>
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
 
               </div>
-              <div className="card w-full lg:w-[45%] rounded-lg p-6 bg-[#F2F7FC] min-h-20 mt-4">
+              <div className="card w-full lg:w-[48%] rounded-lg p-6 bg-[#F2F7FC] min-h-14 mt-4">
                 <div className='flex '>
                   <div><i class="fa-solid fa-envelope mr-3"></i></div>
                   <div>
@@ -81,8 +81,24 @@ const Contact = () => {
               variants={slideInAnimation}
               className='w-full'>
             <div className="w-full">
-              <div className="card rounded-lg p-6 bg-[#F2F7FC] min-h-60 mt-4">
-                </div>
+              <div className="card rounded-lg p-6 bg-[#F2F7FC] mt-4">
+                <p>I always open to discussing <span className='font-semibold'>new projects, opportunities in tech world partnerships</span> and more so <span className='font-semibold'>mentorship.</span></p>
+                <form className='mt-2'>
+                  <div className='mt-4'>
+                    <p className='font-semibold'>Name:</p>
+                    <input type="text" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="name" id="" />
+                  </div>
+                  <div className='mt-4'>
+                    <p className='font-semibold'>Email:</p>
+                    <input type="email" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="email" id="" />
+                  </div>
+                  <div className='mt-4'>
+                    <p className='font-semibold'>Message:</p>
+                    <input type="text" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="message" id="" />
+                  </div>
+                  <button type='submit' className='mt-5 px-4 py-1 bg-[#FFB23D] text-white transition-all duration-200 outline-none hover:text-black hover:bg-transparent border-[#FFB23D] rounded-sm border-2'>Send</button>
+                </form>
+              </div>
             </div>
             </motion.div>
           </div>
