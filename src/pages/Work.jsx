@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BrangImg from "../asset/Brang.jpg";
+import FinanceMS from '../asset/FinanceManagementSystem.png'
+import JoJoQuizApp from "../asset/JoJoQuizApp.png"
+import BTBS from '../asset/BTBS.png'
+import CA from '../asset/checkingAttendance.png'
+import Library from '../asset/library.png'
 
 const Work = () => {
   const slideInAnimation = {
@@ -15,6 +19,7 @@ const Work = () => {
     },
     exit: { opacity: 0, x: "-40vw" },
   };
+
   const slideInAnimationleft = {
     initial: { opacity: 0, x: "140vw" },
     animate: {
@@ -27,6 +32,7 @@ const Work = () => {
     },
     exit: { opacity: 0, x: "-40vw" },
   };
+  
   const fadeInAnimation = {
     initial: { opacity: 0 },
     animate: {
@@ -42,47 +48,57 @@ const Work = () => {
   let projects = [
     {
       id: 1,
-      name: "Finance Management",
+      name: "JoJo (Grammer Quiz App)",
       tech: "Web Development",
       link: {
         demo: null,
-        Github: null,
-        site: null,
+        Github: "https://github.com/BrangB/JoJo-Quiz-App",
+        site: "https://brangb.github.io/JoJo-Quiz-App/",
       },
-      imgUrl: "BrangImg"
+      imgUrl: JoJoQuizApp
     },
     {
       id: 2,
-      name: "Finance Management",
-      tech: "Web Development",
+      name: "Bus Ticket Booking System",
+      tech: "C# WindowForm",
       link: {
-        demo: null,
-        Github: null,
-        site: null,
+        demo: "https://drive.google.com/file/d/1yZbboMT2tXrS81ukm_n-x5uApqi8l6Q2/view?usp=sharing",
+        Github: "https://github.com/BrangB/Bus_tickets-booking-system",
       },
-      imgUrl: "BrangImg"
+      imgUrl: BTBS
     },
     {
       id: 3,
-      name: "Finance Management",
+      name: "Finance Management System",
       tech: "Web Development",
       link: {
         demo: null,
-        Github: null,
-        site: null,
+        Github: "https://github.com/BrangB/FinanceFrontend",
+        site: "https://brangexpensetracker.netlify.app/",
       },
-      imgUrl: "BrangImg"
+      imgUrl: FinanceMS
     },
     {
       id: 4,
-      name: "Finance Management",
+      name: "Bookshelf & Library",
+      tech: "Web Development",
+      link: {
+        demo: "https://drive.google.com/file/d/14UJOMk5QbiLumrJbGF0mPUsr3toagOqk/view?usp=drive_link",
+        Github: "https://github.com/BrangB/Bookshelf-Tracker-Library",
+        site: "https://bibrary-brang.netlify.app/",
+      },
+      imgUrl: Library
+    },
+    {
+      id: 5,
+      name: "Checking Attendance",
       tech: "Web Development",
       link: {
         demo: null,
-        Github: null,
-        site: null,
+        Github: "https://github.com/BrangB/Checking-Attendance/",
+        site: "https://checkingattendance.netlify.app/",
       },
-      imgUrl: "BrangImg"
+      imgUrl: CA
     },
   ];
   return (
@@ -107,14 +123,14 @@ const Work = () => {
               animate="animate"
               exit="exit"
               variants={slideInAnimation}
-              className="w-full flex justify-center lg:justify-between flex-wrap mt-3"
+              className="w-full flex justify-center gap-3 lg:gap-6 flex-wrap mt-3"
             >
                 {projects.map((project) => {
                   return (
-                    <div className="card rounded-lg p-3 bg-[#F2F7FC] min-w-[300px] min-h-40 mt-4">
+                    <div className="card rounded-lg p-3 bg-[#F2F7FC] min-w-[350px] min-h-40 mt-4" key={project.id}>
                       <img
-                        className="w-full h-40 rounded-lg object-cover object-top"
-                        src={BrangImg}
+                        className="w-full h-40 rounded-lg object-cover object-top bg-[white] p-2"
+                        src={project.imgUrl}
                         alt=""
                       />
                       <p className="mt-2">{project.tech}</p>
@@ -122,15 +138,18 @@ const Work = () => {
                         {project.name}
                       </h2>
                       <div className="flex mt-2">
-                        <p className="py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm">
+                        <a href={project.link.demo} className={project.link.demo == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
                           Demo
-                        </p>
-                        <p className="py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm">
+                          <i class="fa-solid fa-play ms-2"></i>
+                        </a>
+                        <a href={project.link.Github} className={project.link.Github == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
                           GitHub
-                        </p>
-                        <p className="py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm">
+                          <i class="fa-brands fa-github ms-2"></i>
+                        </a>
+                        <a href={project.link.site} className={project.link.site == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
                           URL
-                        </p>
+                          <i class="fa-solid fa-earth-americas ms-2"></i>
+                        </a>
                       </div>
                     </div>
                   );

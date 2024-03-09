@@ -1,18 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion"
 
 const Contact = () => {
   const slideInAnimation = {
     initial: { opacity: 0, x: "-40vw" },
-    animate: { opacity: 1, x: 0, 
-      transition: {
-        duration: 0.5, // Duration in seconds
-        ease: "easeInOut", // Easing function, you can use different easing functions
-      }  },
-    exit: { opacity: 0, x: "-40vw" },
-  };
-  const slideInAnimationleft = {
-    initial: { opacity: 0, x: "140vw" },
     animate: { opacity: 1, x: 0, 
       transition: {
         duration: 0.5, // Duration in seconds
@@ -29,6 +21,20 @@ const Contact = () => {
     } },
     exit: { opacity: 0 },
   };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_g85fsxy', 'template_ry1zgio', form.current, '92V55bPb6utQ2a_ta')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <motion.div
       initial="initial"
@@ -44,7 +50,7 @@ const Contact = () => {
             exit="exit"
             variants={slideInAnimation}>
           <h1 className='text-3xl font-bold'>Contact</h1>
-          <div className="flex flex-col items-start justify-between md:flex-row flex-wrap gap-4 w-full p-4 mt-2" >
+          <div className="flex flex-col items-start justify-between md:flex-row flex-wrap gap-4 w-full lg:p-4 mt-2" >
             <motion.div      
               initial="initial"
               animate="animate"
@@ -83,18 +89,18 @@ const Contact = () => {
             <div className="w-full">
               <div className="card rounded-lg p-6 bg-[#F2F7FC] mt-4">
                 <p>I always open to discussing <span className='font-semibold'>new projects, opportunities in tech world partnerships</span> and more so <span className='font-semibold'>mentorship.</span></p>
-                <form className='mt-2'>
+                <form className='mt-2' ref={form} onSubmit={sendEmail}>
                   <div className='mt-4'>
                     <p className='font-semibold'>Name:</p>
-                    <input type="text" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="name" id="" />
+                    <input type="text" name="user_name" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' />
                   </div>
                   <div className='mt-4'>
                     <p className='font-semibold'>Email:</p>
-                    <input type="email" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="email" id="" />
+                    <input type="email" name="user_email" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' />
                   </div>
                   <div className='mt-4'>
                     <p className='font-semibold'>Message:</p>
-                    <input type="text" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="message" id="" />
+                    <input type="text" className='bg-transparent border-b-2 border-[#cccccc9d] w-full outline-none px-1 py-2' name="user_message" />
                   </div>
                   <button type='submit' className='mt-5 px-4 py-1 bg-[#FFB23D] text-white transition-all duration-200 outline-none hover:text-black hover:bg-transparent border-[#FFB23D] rounded-sm border-2'>Send</button>
                 </form>

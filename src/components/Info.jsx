@@ -6,8 +6,8 @@ const Info = () => {
         <div className="real-info  flex flex-col items-center justify-start px-8 py-20 lg:p-0 w-[100%] lg:w-[80%] bg-white h-[100%] relative rounded-xl">
           <div className="transparentOne hidden lg:block h-[80px]"></div>
           <img className="w-[120px] hidden lg:flex avatarImg h-[120px] rounded-sm lg:rounded-lg object-cover relative avatarImg lg:absolute -top-[50px]" src={avatar} alt="" />
-          <h2 className="text-[#0B0909] text-4xl lg:text-xl font-bold">Brang Tsawm Aung</h2>
-          <p className="text-[#0b0909a4] text-sm mt-1">Front-end Developer</p>
+          <h2 className="text-[#0B0909] text-3xl lg:text-xl font-bold">Brang Tsawm Aung</h2>
+          <p className="text-[#0b0909a4] text-sm mt-3">Front-end Developer</p>
           <div className="socialIcon flex w-full items-center justify-center mt-5">
             <div className='w-9 h-9 lg:w-12 lg:h-12 bg-[#F2F7FC] m-1 hover:scale-110 transition-all duration-200 flex items-center justify-center p-3'><i className="fa-brands fa-facebook-f text-blue-600 text-lg md:text-xl"></i></div>
             <div className='w-9 h-9 lg:w-12 lg:h-12 bg-[#F2F7FC] m-1 hover:scale-110 transition-all duration-200 flex items-center justify-center p-3'><i className="fa-brands fa-instagram text-orange-700 text-lg md:text-xl"></i></div>
