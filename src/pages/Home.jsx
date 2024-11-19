@@ -46,10 +46,14 @@ const Home = () => {
           <div>
             <h1 className="text-2xl lg:text-3xl font-bold">About Me</h1>
             <p className="mt-4 text-justify p-2">
-              Hello there! I'm Brang Tsawm Aung, a third-year Computer Science
-              student in MIT's LAP program. I am deeply passionate about front-end
-              development. I currently live in Yangon's Insein township home...{" "}
-              <span className="ms-2 font-bold cursor-pointer">See more</span>
+            Final-year Computer Science student at MIT (LAP program), passionate
+            about web development with a specialization in frontend development. I’ve
+            built self-study and entry-level projects like Hymns Myanmar and a voting
+            system, using frameworks such as React, TailwindCSS, Go, and MySQL.
+            I have a strong passion for learning new technologies and have built
+            projects independently. With excellent
+            communication skills and flexibility, I thrive in team environments and adapt
+            to dynamic requirements efficiently.
             </p>
           </div>
         </motion.div>

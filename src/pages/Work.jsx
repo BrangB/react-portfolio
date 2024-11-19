@@ -5,6 +5,7 @@ import JoJoQuizApp from "../asset/JoJoQuizApp.png"
 import BTBS from '../asset/BTBS.png'
 import CA from '../asset/checkingAttendance.png'
 import Library from '../asset/library.png'
+import Placeholder from '../asset/placeholderProject.png'
 
 const Work = () => {
   const slideInAnimation = {
@@ -47,60 +48,92 @@ const Work = () => {
 
   let projects = [
     {
-      id: 1,
-      name: "JoJo (Grammer Quiz App)",
-      tech: "Web Development",
-      link: {
-        demo: null,
-        Github: "https://github.com/BrangB/JoJo-Quiz-App",
-        site: "https://brangb.github.io/JoJo-Quiz-App/",
-      },
-      imgUrl: JoJoQuizApp
-    },
-    {
-      id: 2,
-      name: "Bus Ticket Booking System",
-      tech: "C# WindowForm",
-      link: {
-        demo: "https://drive.google.com/file/d/1yZbboMT2tXrS81ukm_n-x5uApqi8l6Q2/view?usp=sharing",
-        Github: "https://github.com/BrangB/Bus_tickets-booking-system",
-      },
-      imgUrl: BTBS
-    },
-    {
       id: 3,
       name: "Finance Management System",
-      tech: "Web Development",
+      techStack: ["React", "Nodejs", "MongoDB"],
       link: {
         demo: null,
         Github: "https://github.com/BrangB/FinanceFrontend",
         site: "https://brangexpensetracker.netlify.app/",
       },
-      imgUrl: FinanceMS
+      imgUrl: FinanceMS,
     },
     {
       id: 4,
       name: "Bookshelf & Library",
-      tech: "Web Development",
+      techStack: ["HTML5", "CSS3", "JavaScript"],
       link: {
         demo: "https://drive.google.com/file/d/14UJOMk5QbiLumrJbGF0mPUsr3toagOqk/view?usp=drive_link",
         Github: "https://github.com/BrangB/Bookshelf-Tracker-Library",
         site: "https://bibrary-brang.netlify.app/",
       },
-      imgUrl: Library
+      imgUrl: Library,
     },
+    // {
+    //   id: 5,
+    //   name: "Checking Attendance",
+    //   techStack: ["HTML5", "CSS3", "JavaScript"],
+    //   link: {
+    //     demo: null,
+    //     Github: "https://github.com/BrangB/Checking-Attendance/",
+    //     site: "https://checkingattendance.netlify.app/",
+    //   },
+    //   imgUrl: CA,
+    // },
     {
-      id: 5,
-      name: "Checking Attendance",
-      tech: "Web Development",
+      id: 6,
+      name: "Voting System",
+      techStack: ["Go", "Gin", "SQLite", "JWT"],
       link: {
         demo: null,
-        Github: "https://github.com/BrangB/Checking-Attendance/",
-        site: "https://checkingattendance.netlify.app/",
+        Github: "https://github.com/BrangB/Go-Voting-System-mini-.git",
       },
-      imgUrl: CA
+      imgUrl: Placeholder,
+    },
+    {
+      id: 7,
+      name: "Cupidy Dating Website",
+      techStack: ["React", "Tailwind", "Vite"],
+      link: {
+        demo: null,
+        Github: "https://github.com/BrangB/Cupidy-Dating-App.git",
+      },
+      imgUrl: Placeholder,
+    },
+    {
+      id: 8,
+      name: "Hymns Myanmar",
+      techStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+      link: {
+        demo: null,
+        Github: "https://github.com/BrangB/Hymns-Myanmar-LAP-3.git",
+      },
+      imgUrl: Placeholder,
+    },
+    {
+      id: 1,
+      name: "JoJo (Grammer Quiz App)",
+      techStack: ["HTML5", "CSS3", "JavaScript"],
+      link: {
+        demo: null,
+        Github: "https://github.com/BrangB/JoJo-Quiz-App",
+        site: "https://brangb.github.io/JoJo-Quiz-App/",
+      },
+      imgUrl: JoJoQuizApp,
+    },
+    {
+      id: 2,
+      name: "Bus Ticket Booking System",
+      techStack: ["C#", "Windows Forms"],
+      link: {
+        demo: "https://drive.google.com/file/d/1yZbboMT2tXrS81ukm_n-x5uApqi8l6Q2/view?usp=sharing",
+        Github: "https://github.com/BrangB/Bus_tickets-booking-system",
+      },
+      imgUrl: BTBS,
     },
   ];
+  
+  
   return (
     <motion.div
       initial="initial"
@@ -123,37 +156,56 @@ const Work = () => {
               animate="animate"
               exit="exit"
               variants={slideInAnimation}
-              className="w-full flex justify-center gap-3 lg:gap-6 flex-wrap mt-3"
+              className="w-full flex justify-evenly gap-6 flex-wrap mt-6"
             >
-                {projects.map((project) => {
-                  return (
-                    <div className="card rounded-lg p-3 bg-[#F2F7FC] min-w-[350px] min-h-40 mt-4" key={project.id}>
-                      <img
-                        className="w-full h-40 rounded-lg object-cover object-top bg-[white] p-2"
-                        src={project.imgUrl}
-                        alt=""
-                      />
-                      <p className="mt-2">{project.tech}</p>
-                      <h2 className="font-semibold text-lg">
-                        {project.name}
-                      </h2>
-                      <div className="flex mt-2">
-                        <a href={project.link.demo} className={project.link.demo == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
-                          Demo
-                          <i class="fa-solid fa-play ms-2"></i>
-                        </a>
-                        <a href={project.link.Github} className={project.link.Github == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
-                          GitHub
-                          <i class="fa-brands fa-github ms-2"></i>
-                        </a>
-                        <a href={project.link.site} className={project.link.site == null ? "hidden": "hover:bg-slate-300 transition-all duration-200 py-1 px-2 bg-slate-200 m-2 rounded-lg text-sm"}>
-                          URL
-                          <i class="fa-solid fa-earth-americas ms-2"></i>
-                        </a>
-                      </div>
-                    </div>
-                  );
-                })}
+          {projects.map((project) => (
+            <div
+              className="card bg-[#F2F7FC] w-[80%] lg:w-[300px] rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              key={project.id}
+            >
+              <img
+                className="w-full h-40 rounded-t-lg object-cover"
+                src={project.imgUrl}
+                alt={project.name}
+              />
+              <div className="p-4">
+                <h2 className="font-semibold text-lg mb-2">{project.name}</h2>
+                <p className="font-medium mb-1">Technologies:</p>
+                <ul className="list-disc pl-5 mb-3">
+                  {project.techStack.map((tech, index) => (
+                    <li key={index} className="text-sm">{tech}</li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {project.link.demo && (
+                    <a
+                      href={project.link.demo}
+                      className="bg-blue-500 text-white py-1 px-3 rounded-md text-sm hover:bg-blue-600 transition-all"
+                    >
+                      Demo <i className="fa-solid fa-play ml-2"></i>
+                    </a>
+                  )}
+                  {project.link.Github && (
+                    <a
+                      href={project.link.Github}
+                      className="bg-gray-700 text-white py-1 px-3 rounded-md text-sm hover:bg-gray-800 transition-all"
+                    >
+                      GitHub <i className="fa-brands fa-github ml-2"></i>
+                    </a>
+                  )}
+                  {project.link.site && (
+                    <a
+                      href={project.link.site}
+                      className="bg-green-500 text-white py-1 px-3 rounded-md text-sm hover:bg-green-600 transition-all"
+                    >
+                      URL <i className="fa-solid fa-earth-americas ml-2"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+
             </motion.div>
           </div>
         </motion.div>
